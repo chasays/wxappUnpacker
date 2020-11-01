@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "美一天餐饮",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "usingComponents": {}
+}

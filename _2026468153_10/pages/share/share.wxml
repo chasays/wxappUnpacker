@@ -1,0 +1,5 @@
+<view class="container">
+    <button class="share" hoverClass="none" openType="share">
+        <image mode="widthFix" src="{{url}}{{share.share_ad}}"></image>
+    </button>
+</view>

@@ -1,0 +1,81 @@
+<view class="container">
+    <view class="header">
+        <image src="{{data.headimgurl}}"></image>
+        <view>{{data.nickname}}</view>
+    </view>
+    <form bindsubmit="editMembersHandel" reportSubmit="true">
+        <view class="list">
+            <view>
+                <view class="l-left">
+                    <text>姓名</text>
+                </view>
+                <view class="l-right">
+                    <input name="username" placeholder="请输入姓名" type="text" value="{{data.username}}"></input>
+                </view>
+            </view>
+            <view>
+                <view class="l-left">
+                    <text>手机号</text>
+                </view>
+                <view class="l-right">
+                    <input name="userphone" placeholder="请输入手机号" type="number" value="{{data.userphone}}"></input>
+                </view>
+            </view>
+            <view>
+                <view class="l-left">
+                    <text>地址</text>
+                </view>
+                <view class="l-right">
+                    <picker bindchange="changeArea" bindcolumnchange="bindcolumnchange" customItem="{{customItem}}" mode="multiSelector" name="address" range="{{areaClumn}}" rangeKey="name" value="{{region_index}}">
+                        <view class="picker">
+                  {{region[0]}}，{{region[1]}}，{{region[2]}}
+                </view>
+                    </picker>
+                </view>
+            </view>
+            <view>
+                <view class="l-left">
+                    <text>门牌号</text>
+                </view>
+                <view class="l-right">
+                    <input name="area4" placeholder="请输入地址详情" type="text" value="{{data.area4}}"></input>
+                </view>
+            </view>
+            <view>
+                <view class="l-left">
+                    <text>生日</text>
+                </view>
+                <view class="l-right">
+                    <picker bindchange="birthdayChange" mode="date" name="birthday" value="{{birthday}}">{{birthday}}</picker>
+                </view>
+            </view>
+            <view>
+                <view class="l-left">
+                    <text>性别</text>
+                </view>
+                <view class="l-right">
+                    <picker bindchange="sexChange" mode="selector" name="sex" range="{{sexArr}}" value="{{sex}}">{{sex}}</picker>
+                </view>
+            </view>
+            <view>
+                <view class="l-left">
+                    <text>口味偏好</text>
+                </view>
+                <view class="l-right">
+                    <input name="goods" placeholder="如：清淡、麻辣" type="text" value="{{data.goods}}"></input>
+                </view>
+            </view>
+            <view>
+                <view class="l-left">
+                    <text>其他</text>
+                </view>
+                <view class="l-right">
+                    <input name="msg" placeholder="我还想说..." type="text" value="{{data.msg}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="footer">
+            <button class="bg" formType="submit">保 存</button>
+        </view>
+    </form>
+</view>

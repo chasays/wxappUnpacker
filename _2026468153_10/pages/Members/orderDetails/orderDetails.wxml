@@ -1,0 +1,114 @@
+<view class="container">
+    <view class="order-head bg">
+        <view class="head-txt">
+            <view wx:if="{{data.status==0}}">
+                <view>等待买家付款</view>
+                <text>剩{{data.hours_min}}自动关闭</text>
+            </view>
+            <view wx:else>
+                <view class="status" wx:if="{{data.status==0}}">待支付</view>
+                <view class="status" wx:if="{{data.status==1}}">已支付</view>
+                <view class="status" wx:if="{{data.status==2}}">已完成</view>
+                <view class="status" wx:if="{{data.status==5}}">已取消</view>
+            </view>
+        </view>
+        <view class="head-img">
+            <image mode="widthFix" src="/images/icon/wait_pay.png"></image>
+        </view>
+    </view>
+    <view class="order-details-address">
+        <view class="address-ico">
+            <image src="/images/icon/dw.png"></image>
+        </view>
+        <view class="address-txt">
+            <view class="h3">
+                <text>收货人：{{data.username}}</text>
+                <text>{{data.userphone}}</text>
+            </view>
+            <view class="addres">
+        收货地址：{{data.area1}},{{data.area2}},{{data.area3}},{{data.area4}}
+      </view>
+        </view>
+    </view>
+    <view class="order-details">
+        <view class="title">
+            <text>订单号：{{data.ordercode}}</text>
+            <view class="tc" wx:if="{{data.status==0}}">待支付</view>
+            <view class="tc" wx:if="{{data.status==1}}">已支付</view>
+            <view class="tc" wx:if="{{data.status==5}}">已取消</view>
+        </view>
+        <view>
+            <view class="box">
+                <view class="box1">
+                    <image src="{{url}}{{data.goods_pic}}"></image>
+                </view>
+                <view class="box2">
+                    <view class="order-goods">
+                        <view class="goods-txt">
+                            <view class="name">{{data.goods_name}}</view>
+                        </view>
+                        <view class="pos">
+                            <text class="money">￥{{data.goods_price}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="order-details-ul">
+        <view wx:if="{{data.jian_money>0}}">
+            <text>优惠：</text>
+            <view class="t-c">已优惠 {{data.jian_money}}元</view>
+        </view>
+        <view>
+            <text>实际支付:</text>
+            <view class="tc">￥{{data.paymoney}}</view>
+        </view>
+        <view>
+            <text>下单时间：</text>
+            <view>{{data.create_time}}</view>
+        </view>
+        <view>
+            <text decode="{{true}}">留&ensp;&ensp;言：</text>
+            <view>
+                <text>{{data.messages?data.messages:'暂无留言'}} </text>
+                <text bindtap="searchMsg" class="tc" wx:if="{{data.messages_list.length>0}}"> [查看]</text>
+            </view>
+        </view>
+    </view>
+    <view class="foot-order-btn" wx:if="{{data.status==0}}">
+        <text bindtap="upStatus" class="light" data-ordercode="{{data.ordercode}}" data-status="5">取消订单</text>
+        <text bindtap="payOrder" class="light" data-ordercode="{{data.ordercode}}">去支付</text>
+    </view>
+    <view class="foot-order-btn" wx:if="{{data.status==1}}">
+        <text bindtap="editMessages" class="light">修改留言</text>
+        <text>已支付</text>
+    </view>
+    <view class="foot-order-btn" wx:if="{{data.status==5}}">
+        <text>已取消</text>
+    </view>
+</view>
+<block wx:if="{{msg_layer}}">
+    <view class="mask"></view>
+    <view class="msg-layer">
+        <view class="s-content">
+            <textarea bindinput="getValue" placeholder="订单留言" value="{{data.messages}}"></textarea>
+        </view>
+        <view class="s-btn">
+            <view bindtap="cancel">取消</view>
+            <view bindtap="editMessagesHandel" class="tc">确定</view>
+        </view>
+    </view>
+</block>
+<block wx:if="{{see_layer}}">
+    <view class="mask"></view>
+    <view class="see-layer">
+        <scroll-view class="sl-content" scrollY="true">
+            <view class="sl-option" wx:for="{{data.messages_list}}" wx:key="index">
+            {{item.messages}}
+            <text> {{item.create_time}}</text>
+            </view>
+        </scroll-view>
+        <image bindtap="seeClose" class="sl-close" src="/images/icon/close.png"></image>
+    </view>
+</block>

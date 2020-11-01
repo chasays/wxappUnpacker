@@ -1,0 +1,62 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/confirm/confirm",
+        "pages/Members/index/index",
+        "pages/Members/membersInfo/membersInfo",
+        "pages/Members/address/address",
+        "pages/Members/editAddress/editAddress",
+        "pages/Content/content/content",
+        "pages/share/share",
+        "pages/coupon/coupon",
+        "pages/Members/order/order",
+        "pages/Members/orderDetails/orderDetails"
+    ],
+    "window": {
+        "navigationBarTitleText": "美一天餐饮",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff",
+        "backgroundColor": "#FFFFFF",
+        "backgroundTextStyle": "dark",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/toolbar/sy_0.png",
+                "selectedIconPath": "images/toolbar/sy_1.png"
+            },
+            {
+                "pagePath": "pages/coupon/coupon",
+                "text": "优惠券",
+                "iconPath": "images/toolbar/yhq_0.png",
+                "selectedIconPath": "images/toolbar/yhq_1.png"
+            },
+            {
+                "pagePath": "pages/Members/order/order",
+                "text": "订单",
+                "iconPath": "images/toolbar/dd_0.png",
+                "selectedIconPath": "images/toolbar/dd_1.png"
+            },
+            {
+                "pagePath": "pages/Members/index/index",
+                "text": "会员",
+                "iconPath": "images/toolbar/wd_0.png",
+                "selectedIconPath": "images/toolbar/wd_1.png"
+            }
+        ],
+        "backgroundColor": "#fff",
+        "selectedColor": "#ffb53b",
+        "color": "#666666",
+        "borderStyle": "white",
+        "position": "bottom"
+    },
+    "networkTimeout": {
+        "request": 20000,
+        "connectSocket": 20000,
+        "uploadFile": 20000,
+        "downloadFile": 20000
+    }
+}

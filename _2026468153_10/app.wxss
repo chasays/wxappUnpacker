@@ -1,0 +1,201 @@
+.container {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.bg {
+    background: #ffcc18!important;
+}
+
+.tc {
+    color: #ffcc18!important;
+}
+
+page {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    font-family: SimHei;
+}
+
+input {
+    outline: none;
+    border: none;
+    list-style: none;
+}
+
+.disabled {
+    pointer-events: none!important;
+}
+
+button:after {
+    border: none;
+}
+
+button {
+    position: relative;
+    display: block;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    text-align: center;
+    text-decoration: none;
+    line-height: normal;
+    border-radius: 3rpx;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    color: #000;
+    background-color: #f8f8f8;
+    padding: 0;
+}
+
+.auth,.mask {
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth>view {
+    width: 75%;
+    background: #fff;
+    padding: 50rpx 0;
+    border-radius: 10rpx;
+}
+
+.auth>view>.auth-btn {
+    height: 100rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 20rpx auto 0;
+}
+
+.auth>view>.auth-btn>button {
+    width: 45%;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    height: 60rpx;
+    border-radius: 40rpx;
+    border: none;
+}
+
+.auth>view>.auth-btn>.confirm {
+    background: #179b16;
+    color: #fff;
+}
+
+.auth>view>.auth-btn>.cancel {
+    border: 2rpx solid #179b16;
+    color: #179b16;
+}
+
+.auth>view>.auth-content {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 60rpx;
+}
+
+.auth>view>.auth-content>.h3 {
+    font-weight: 700;
+    font-size: 32rpx;
+    color: #555;
+}
+
+.auth>view>.auth-content>.t {
+    font-size: 25rpx;
+    color: #666;
+}
+
+.nodata {
+    height: 80rpx;
+    color: #999;
+    line-height: 80rpx;
+    font-size: 26rpx;
+    text-align: center;
+}
+
+.top-saarch {
+    height: 100rpx;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.top-saarch>view {
+    width: 97%;
+    background: #fff;
+    margin: 10rpx auto 0;
+    height: 76rpx;
+    line-height: 76rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10rpx;
+}
+
+.top-saarch>view>icon {
+    position: relative;
+    top: 15rpx;
+    right: 10rpx;
+}
+
+.top-saarch>view>text {
+    font-size: 30rpx;
+    color: #666;
+    letter-spacing: 5rpx;
+}
+
+.copyright {
+    font-size: 28rpx;
+    color: #ccc;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.title-h2 {
+    background: #fff;
+    height: 80rpx;
+}
+
+.title-h2>view {
+    display: flex;
+    align-items: center;
+    height: 79rpx;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #f2f2f2;
+    width: 96%;
+    margin: 0 auto;
+}
+
+.title-h2>view>view {
+    color: #555;
+    font-size: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-left: 8rpx solid #00cd85;
+    padding-left: 15rpx;
+}
+
+.title-h2>view>text {
+    font-size: 28rpx;
+    color: #999;
+}

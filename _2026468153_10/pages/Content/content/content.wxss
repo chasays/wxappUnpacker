@@ -1,0 +1,13 @@
+page {
+    background: #fff;
+}
+
+.content {
+    font-size: 30rpx;
+    color: #444;
+    padding: 15rpx;
+}
+
+.video {
+    width: 100%;
+}

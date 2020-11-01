@@ -1,0 +1,179 @@
+<view class="nodata" style="margin-top:300rpx" wx:if="{{p_status==2}}">— "{{p_title}}"已打烊 —</view>
+<block wx:else>
+    <view class="container">
+        <swiper autoplay="true" class="swiper" indicatorDots="true" wx:if="{{banner}}">
+            <swiper-item class="banner-item" wx:for="{{banner}}" wx:key="index">
+                <image bindtap="link" class="item-image" data-surl="{{item.surl}}" mode="aspectFill" src="{{url}}{{item.pic}}"></image>
+            </swiper-item>
+        </swiper>
+        <view wx:if="{{config.banner_ad_status==1}}">
+            <image bindtap="link" class="banner-ad" data-surl="{{config.banner_ad_url}}" mode="heightFix" src="{{url}}{{config.banner_ad}}"></image>
+        </view>
+        <view class="content">
+            <view class="c-left">
+                <view bindtap="change" class="{{item.id==column_id?'active':''}}" data-column_id="{{item.id}}" style="height:{{height}}px" wx:for="{{column}}" wx:key="index">
+                    <view wx:if="{{item.id==column_id}}">
+                        <image src="{{url}}{{item.icon}}"></image>
+                        <text>{{item.name}}</text>
+                    </view>
+                    <view wx:else>
+                        <view>{{item.name}}</view>
+                        <text>{{item.en_name}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="c-right">
+                <view wx:if="{{column_id==1}}">
+                    <block wx:if="{{goods.length>0}}">
+                        <view bindtap="toConfirm" class="menu" data-index="{{index}}" data-surl="../confirm/confirm?goods_guid={{item.guid}}" wx:for="{{goods}}" wx:key="index">
+                            <view class="m-img">
+                                <image src="{{url}}{{item.pic}}"></image>
+                            </view>
+                            <view class="m-txt">
+                                <view class="t-name">
+                                    <text>{{item.name}}</text>
+                                </view>
+                                <view class="t-title">
+                                    <text>{{item.title}} </text>
+                                </view>
+                                <view class="t-btn">
+                                    <view class="tb-left">
+                                        <view class="{{item.old_price?'red':''}}">
+                                            <text>{{item.discount}}</text>
+                                        </view>
+                                        <text>￥{{item.old_price?item.old_price:'0'}}</text>
+                                    </view>
+                                    <view class="tb-right">
+                                        <view class="{{item.btn.status==200?'bg':'disabled'}}">{{item.btn.msg}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="nodata" wx:else>暂无套餐</view>
+                </view>
+                <view wx:if="{{column_id==2}}">
+                    <rich-text nodes="{{weekfood}}"></rich-text>
+                </view>
+                <view wx:if="{{column_id==3}}">
+                    <view class="coupon" wx:if="{{new_send_coupon.new_send_coupon_status==1}}">
+                        <view class="c-left tc">{{new_send_coupon.new_send_coupon}}折</view>
+                        <view class="c-center">
+                            <view>
+                                <view>{{new_send_coupon.new_send_coupon_name}}</view>
+                                <text>{{new_send_coupon.new_send_coupon_title}} </text>
+                            </view>
+                        </view>
+                        <view class="c-right">
+                            <text bindtap="link" class="bg" data-surl="../share/share">马上赠送</text>
+                        </view>
+                    </view>
+                    <view class="coupon" wx:if="{{old_send_coupon.old_send_coupon_status==1}}">
+                        <view class="c-left tc">{{old_send_coupon.old_send_coupon}}折</view>
+                        <view class="c-center">
+                            <view>
+                                <view>{{old_send_coupon.old_send_coupon_name}}</view>
+                                <text>{{old_send_coupon.old_send_coupon_title}}</text>
+                            </view>
+                        </view>
+                        <view class="c-right">
+                            <text bindtap="setOldCoupon" class="{{old_send_coupon_condition==1?'bg':'disabled'}}">领 取</text>
+                        </view>
+                    </view>
+                    <view class="coupon-merge" wx:if="{{config.coupon_ad_status==1}}">
+                        <image bindtap="link" data-surl="{{config.coupon_ad_url}}" mode="widthFix" src="{{url}}{{config.coupon_ad}}"></image>
+                    </view>
+                </view>
+                <view wx:if="{{column_id==4}}">
+                    <block wx:if="{{goods.length>0}}">
+                        <view bindtap="toConfirm" class="menu" data-index="{{index}}" data-surl="../confirm/confirm?goods_guid={{item.guid}}" wx:for="{{goods}}" wx:key="index">
+                            <view class="m-img">
+                                <image src="{{url}}{{item.pic}}"></image>
+                            </view>
+                            <view class="m-txt">
+                                <view class="t-name">
+                                    <text>{{item.name}}</text>
+                                </view>
+                                <view class="t-title">
+                                    <text>{{item.title}} </text>
+                                </view>
+                                <view class="t-btn">
+                                    <view class="tb-left">
+                                        <view class="{{item.old_price?'red':''}}">
+                                            <text>{{item.discount}}</text>
+                                        </view>
+                                        <text>￥{{item.old_price?item.old_price:''}}</text>
+                                    </view>
+                                    <view class="tb-right">
+                                        <view class="{{item.btn.status==200?'bg':'disabled'}}">{{item.btn.msg}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="nodata" wx:else>暂无套餐</view>
+                </view>
+            </view>
+        </view>
+        <view class="footer" wx:if="{{ad.status==1}}">
+            <image bindtap="link" data-surl="{{ad.url}}" src="{{url}}{{ad.pic}}"></image>
+        </view>
+    </view>
+    <view class="float-btn">
+        <button bindtap="serverLayer">
+            <image src="/images/icon/kf.png"></image>
+        </button>
+    </view>
+</block>
+<view class="mask" wx:if="{{service_layer}}"></view>
+<view class="server" wx:if="{{service_layer}}">
+    <view class="s-title tc">添加客服微信咨询</view>
+    <view class="s-img">
+        <image src="{{url}}{{service.qrcode}}"></image>
+    </view>
+    <text class="s-weixin">微信号：{{service.weixin}}</text>
+    <view class="s-btn">
+        <text bindtap="copWeixin" class="bg">复制微信号</text>
+    </view>
+    <image bindtap="serverClose" class="s-close" src="/images/icon/close.png"></image>
+</view>
+<view bindtap="closeAd" class="layer_ad" wx:if="{{config.ad_status==1&&ad_status}}">
+    <view>
+        <image class="close" src="/images/icon/ad_c.png"></image>
+        <image bindtap="link" class="ad_pic" data-surl="{{config.ad_url}}" src="{{url}}{{config.ad_pic}}"></image>
+    </view>
+</view>
+<view class="modal" hidden="{{isShow}}">
+    <view bindtap="close" class="modal_bg"></view>
+    <view class="modal_box" style="animation:{{exit?'remove':'move'}} 0.7s ease-in-out">
+        <view class="photograph">
+            <image class="bgImg" mode="widthFix" src="/images/icon/tckbg.png"></image>
+            <view class="title">恭喜你，获得超值福利！</view>
+            <view class="newsUser">{{coupon.name}}</view>
+            <view class="price">
+                <text>{{coupon.coupon}}</text>优惠券</view>
+            <image bindtap="close" class="close" mode="aspectFill" src="/images/icon/close.png"></image>
+            <view bindtap="newSendCouponHandel" class="get" wx:if="{{btn_status}}">
+                <image class="getImg" mode="aspectFill" src="/images/icon/get.png"></image>
+            </view>
+            <view class="get" wx:else>
+                <image class="getImg" mode="aspectFill" src="/images/icon/get.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="auth" wx:if="{{auth}}">
+    <view>
+        <view class="auth-content">
+            <view class="h3">授权后体验更佳</view>
+            <view class="t">·获得微信公开信息（头像、昵称等）</view>
+        </view>
+        <view class="auth-btn">
+            <button bindtap="cancelAuth" class="cancel" hoverClass="none">暂不登录</button>
+            <button bindgetuserinfo="getUserInfo" class="confirm" openType="getUserInfo" type="primary">登录授权</button>
+        </view>
+    </view>
+</view>
+<view class="layer-close" wx:if="{{config.buy_status=='no'}}">
+    <view class="tc">{{config.buy_msg}}</view>
+</view>

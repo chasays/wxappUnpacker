@@ -1,0 +1,64 @@
+page {
+    background: #fff;
+}
+
+.n-list {
+    margin-top: 20rpx;
+}
+
+.n-list>.l-option {
+    border-radius: 20rpx;
+    width: 94%;
+    margin: 0 auto 25rpx;
+    border: 2rpx solid #f2f2f2;
+    box-shadow: 0 0 10rpx 2rpx #ddd;
+    overflow: hidden;
+    height: 250rpx;
+    display: flex;
+}
+
+.n-list>.l-option>.o-pic {
+    width: 40%;
+}
+
+.l-option>.o-pic>image {
+    width: 250rpx;
+    height: 250rpx;
+    border-radius: 20rpx;
+}
+
+.l-option>.o-txt {
+    position: relative;
+    width: 60%;
+}
+
+.l-option>.o-txt>.o-h {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 32rpx;
+    white-space: nowrap;
+}
+
+.l-option>.o-txt>.o-h,.l-option>.o-txt>.o-text {
+    width: 98%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.l-option>.o-txt>.o-text {
+    font-size: 30rpx;
+    color: #999;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.l-option>.o-txt>.o-time {
+    position: absolute;
+    bottom: 0rpx;
+    width: 100%;
+    font-size: 28rpx;
+    color: #999;
+    height: 100rpx;
+    line-height: 100rpx;
+}

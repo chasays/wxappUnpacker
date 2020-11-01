@@ -1,0 +1,46 @@
+<view class="container">
+    <form bindsubmit="editAddressHandel">
+        <view class="addedit">
+            <view class="option">
+                <view class="name">收货人</view>
+                <view class="value t-name">
+                    <input name="username" placeholder="请输入收货人姓名" type="text" value="{{data.username}}"></input>
+                    <picker bindchange="sexChange" mode="selector" name="sex" range="{{sexArr}}" value="{{sex}}">{{sex}}</picker>
+                </view>
+            </view>
+            <view class="option">
+                <view class="name">联系电话</view>
+                <view class="value">
+                    <input name="userphone" placeholder="请输入联系电话" type="number" value="{{data.userphone}}"></input>
+                </view>
+            </view>
+            <view class="option">
+                <view class="name">送餐地址：</view>
+                <view class="value">
+                    <picker bindchange="changeArea" bindcolumnchange="bindcolumnchange" customItem="{{customItem}}" mode="multiSelector" name="address" range="{{areaClumn}}" rangeKey="name" value="{{region_index}}">
+                        <view class="picker">
+              {{region[0]}}，{{region[1]}}，{{region[2]}}
+            </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="option">
+                <view class="name">门牌号：</view>
+                <view class="value">
+                    <input name="details" placeholder="例如：201" type="number" value="{{data.details}}"></input>
+                </view>
+            </view>
+            <view class="option">
+                <view class="name">默认地址：</view>
+                <view class="value">
+                    <switch checked color="#ffb53b" name="is_default" style="zoom:0.7;" wx:if="{{data.is_default}}"></switch>
+                    <switch color="#ffb53b" name="is_default" style="zoom:0.7;" wx:else></switch>
+                </view>
+            </view>
+            <view class="msg"> 温馨提示：未开通派送业务的小区将无法选取 </view>
+        </view>
+        <view class="submit">
+            <button formType="submit">保 存</button>
+        </view>
+    </form>
+</view>

@@ -1,0 +1,535 @@
+.order-main>view:last-child {
+    border: 0;
+}
+
+.order-address-info,.order-basic-info {
+    padding: 20rpx 40rpx;
+}
+
+.order-basic-info {
+    display: flex;
+    border-bottom: 1rpx solid #e9e9e9;
+}
+
+.order-time-no {
+    flex: 1;
+}
+
+.order-status {
+    display: flex;
+    flex-basis: 110rpx;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.order-time-no view:first-child {
+    margin-bottom: 15rpx;
+}
+
+.order-time-no view .key {
+    color: #999;
+}
+
+.order-time-no view .val {
+    margin-left: 10rpx;
+    color: #333;
+}
+
+.order-address-info {
+    margin-bottom: 15rpx;
+    background: #fff;
+}
+
+.disabled {
+    background: #999;
+    color: #fff!important;
+}
+
+.contact-box {
+    display: flex;
+}
+
+.contact-box>view:first-child {
+    flex: 1;
+    font-size: 28rpx;
+}
+
+.contact-icon {
+    display: flex;
+    flex-basis: 110rpx;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.contact-icon image {
+    width: 48rpx;
+    height: 48rpx;
+    transform: rotate(270deg);
+}
+
+.contact {
+    margin-bottom: 25rpx;
+    justify-content: space-between;
+}
+
+.contact,.contact view {
+    display: flex;
+}
+
+.contact view {
+    align-items: center;
+}
+
+.contact image {
+    margin-right: 10rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.contact .val {
+    color: #333;
+}
+
+.contact-box .detail {
+    color: #999;
+}
+
+.goods-content {
+    border-top: 1rpx solid #f2f2f2;
+}
+
+.goods-content>view {
+    padding: 15rpx 20rpx;
+    display: flex;
+    flex-direction: row;
+    height: 190rpx;
+    background: #fff;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+
+.left-img {
+    width: 30%;
+}
+
+.goods-content>view>.left-img>image {
+    width: 190rpx;
+    height: 190rpx;
+    border-radius: 10rpx;
+}
+
+.goods-content>view>.right_text {
+    width: 70%;
+    height: 100%;
+    position: relative;
+}
+
+.goods-content>view>.right_text>.g-name>view {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 35rpx;
+    color: #555;
+    display: flex;
+}
+
+.right_text>.g-name>view>image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.right_text>.g-name>view>text {
+    margin-left: 5rpx;
+    color: #333;
+    font-weight: 700;
+}
+
+.goods-content>view>.right_text>.g-name>text {
+    font-size: 26rpx;
+    color: #999;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.goods-content>view>.right_text>.g-bottom {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.goods-content>view>.right_text>.g-bottom>.g-price {
+    font-size: 24rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    padding: 0 10rpx;
+    color: #555;
+}
+
+.goods-content>view>.right_text>.g-bottom>.g-cate>text {
+    font-size: 24rpx;
+}
+
+.goods-content>view>.right_text>.g-bottom>.g-cate {
+    display: flex;
+}
+
+.g-bottom>.g-cate>view {
+    color: #ff4218;
+    font-size: 35rpx;
+}
+
+.g-bottom>.g-cate>text {
+    margin-left: 15rpx;
+    text-decoration: line-through;
+    position: relative;
+    top: 10rpx;
+    color: #999;
+}
+
+.footer-account-box {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    background: #fff;
+}
+
+.footer-account-box>.pay-msg {
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 26rpx;
+    text-align: center;
+    color: #ff4218;
+}
+
+.footer-account-box>.pay-btn {
+    display: flex;
+    height: 95rpx;
+    justify-content: space-between;
+    border-top: 1rpx solid #eee;
+    line-height: 95rpx;
+}
+
+.footer-account-box>.pay-btn>view {
+    font-size: 34rpx;
+    margin-left: 20rpx;
+    font-weight: 700;
+    color: #ff4218;
+}
+
+.pay {
+    border-radius: 0;
+    color: #fff;
+    font-size: 30rpx;
+    line-height: 92rpx;
+    flex-basis: 240rpx;
+}
+
+.add-new-address,.pay {
+    justify-content: center;
+}
+
+.add-new-address {
+    display: flex;
+    width: 100%;
+    height: 90rpx;
+    color: #989898;
+    font-size: 28rpx;
+    align-items: center;
+}
+
+.add-new-address .icon {
+    margin-right: 10rpx;
+    color: #ab956d;
+}
+
+.server-list {
+    margin: 30rpx 0;
+    padding: 0 20rpx;
+    background: #fff;
+}
+
+.server-list>view {
+    display: flex;
+    justify-content: space-between;
+    height: 80rpx;
+    border-bottom: 2rpx dashed #c4c4c4;
+    line-height: 80rpx;
+    color: #555;
+}
+
+.server-list>view:last-child {
+    border-bottom: 0;
+}
+
+.server-list>view>text {
+    width: 30%;
+    font-size: 30rpx;
+    color: #333;
+    font-weight: 700;
+}
+
+.server-list>view>view {
+    width: 70%;
+    font-size: 30rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.server-list>view>view view>text {
+    color: #ff4218;
+    font-size: 32rpx;
+}
+
+.server-list>view>view>input {
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.server-list>view>view>image {
+    width: 25rpx;
+    height: 25rpx;
+    padding-left: 10rpx;
+}
+
+.pmsg {
+    color: #b6b4b4;
+}
+
+.switch {
+    zoom: .7;
+}
+
+.upNum {
+    display: flex;
+    width: 150rpx;
+    height: 60rpx;
+    align-items: center;
+}
+
+.upNum>image {
+    width: 40rpx;
+    height: 40rpx;
+    display: block;
+}
+
+.upNum>input {
+    width: 70rpx;
+    text-align: center;
+    line-height: 60rx;
+}
+
+.cycle-list {
+    margin-top: 20rpx;
+    padding: 0 20rpx;
+    background: #fff;
+}
+
+.cycle-list>.cycle {
+    display: flex;
+    justify-content: space-between;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 2rpx dashed #c4c4c4;
+}
+
+.cycle-list>.cycle:last-child {
+    border-bottom: 0;
+}
+
+.cycle-list>.cycle>text {
+    width: 65%;
+    font-size: 30rpx;
+    color: #333;
+    font-weight: 700;
+}
+
+.cycle-list>.cycle>view {
+    width: 35%;
+    font-size: 30rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cycle-list>.cycle-msg {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cycle-list>.cycle-msg>.cm-top {
+    height: 60rpx;
+    font-size: 28rpx;
+    color: #909090;
+    flex-wrap: wrap;
+}
+
+.cycle-list>.cycle-msg>.cm-bottom,.cycle-list>.cycle-msg>.cm-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cycle-list>.cycle-msg>.cm-bottom {
+    height: 70rpx;
+}
+
+.cycle-list>.cycle-msg>.cm-bottom>view {
+    display: flex;
+    align-items: flex-end;
+}
+
+.cycle-list>.cycle-msg>.cm-bottom>view>view {
+    font-size: 34rpx;
+    color: #252525;
+}
+
+.cycle-list>.cycle-msg>.cm-bottom>view>text {
+    font-size: 26rpx;
+    color: #909090;
+    width: 40rpx;
+    text-align: center;
+}
+
+.comfirm,.comfirm>view {
+    display: flex;
+    align-items: center;
+}
+
+.comfirm>view {
+    width: 86rpx;
+    height: 45rpx;
+    justify-content: center;
+}
+
+.comfirm>view>image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.comfirm>text {
+    font-size: 34rpx;
+    color: #ff4218;
+}
+
+.layer-mask {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 1;
+}
+
+.calendar {
+    width: 90%;
+    background-size: 100% 100%;
+    position: absolute;
+    z-index: 2;
+    left: 5%;
+    top: 20%;
+}
+
+.calendar>.cal-header>.cal-year {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 80rpx;
+}
+
+.calendar>.cal-header>.cal-month {
+    display: flex;
+    font-weight: 700;
+    color: #333;
+    height: 80rpx;
+    width: 40%;
+    font-size: 50rpx;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.calendar>.cal-header>.cal-month>.icon {
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60rpx;
+}
+
+.calendar>.cal-header>.cal-month>.icon>image {
+    width: 15rpx;
+    height: 20rpx;
+}
+
+.calendar>.cal-content {
+    width: 100%;
+}
+
+.calendar>.cal-content>.cal-week {
+    font-size: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.calendar>.cal-content>.cal-week>view {
+    display: inline-block;
+    width: 14.285%;
+    color: #666;
+    font-size: 30rpx;
+    text-align: center;
+    border-bottom: 2rpx solid #f2f2f2;
+    padding: 20rpx 0;
+}
+
+.calendar>.cal-content>.cal-date {
+    font-size: 0;
+    padding: 10rpx 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.calendar>.cal-content>.cal-date>view {
+    position: relative;
+    display: inline-block;
+    width: 14.285%;
+    color: #666;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.calendar>.cal-content>.cal-date>view>.date-head {
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 30rpx;
+}
+
+.calendar>.cal-content>.cal-date>.nowDay>.date-head {
+    width: 60rpx;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    background-color: #f93;
+    margin: 0 auto;
+}
+
+.layer_close {
+    position: fixed;
+    top: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200rpx;
+    z-index: 3;
+    width: 100%;
+}
+
+.layer_close>image {
+    width: 60rpx;
+}

@@ -1,0 +1,37 @@
+<view class="container">
+    <block wx:if="{{data.length>0}}">
+        <view class="address" wx:for="{{data}}" wx:key="index">
+            <view class="a-option">
+                <view class="a-content">
+                    <view bindtap="tolink" class="a-text" data-guid="{{item.guid}}">
+                        <view class="a-name">
+                            <view>{{item.username}} | {{item.sex}}</view>
+                            <text>{{item.userphone}}</text>
+                        </view>
+                        <view class="a-details">{{item.address}}{{item.details}}</view>
+                    </view>
+                    <view bindtap="link" class="a-icon" data-surl="../editAddress/editAddress?address_guid={{item.guid}}">
+                        <image src="/images/icon/edit.png"></image>
+                        <view>编辑</view>
+                    </view>
+                </view>
+                <view class="a-footer">
+                    <view bindtap="setDefault" data-guid="{{item.guid}}" data-index="{{index}}">
+                        <image src="/images/icon/{{item.is_default?'checked':'nocheck'}}.png"></image>
+                        <text>默认地址</text>
+                    </view>
+                    <view bindtap="addressDelete" data-guid="{{item.guid}}" data-index="{{index}}">
+                        <image src="/images/icon/del.png"></image>
+                        <text>删除</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="link" class="new-address bg" data-surl="../editAddress/editAddress">添加新地址</view>
+    </block>
+    <view class="noaddress" wx:else>
+        <image src="/images/icon/noaddr.png"></image>
+        <text>您还没有地址信息</text>
+        <view bindtap="link" data-surl="../editAddress/editAddress">+新增地址</view>
+    </view>
+</view>

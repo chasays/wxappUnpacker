@@ -1,0 +1,138 @@
+page {
+    background: #fff;
+}
+
+.header {
+    margin: 0 auto;
+    display: flex;
+    height: 400rpx;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.header>.headimg {
+    width: 22%;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+}
+
+.header>.headimg>image {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+
+.header>.headimg>view {
+    margin-top: 10rpx;
+}
+
+.column>view {
+    display: flex;
+    justify-content: space-between;
+    height: 90rpx;
+    width: 94%;
+    margin: 0 auto;
+    line-height: 90rpx;
+    border-bottom: 2rpx solid #f2f2f2;
+    align-items: center;
+}
+
+.column>view>view {
+    font-size: 30rpx;
+    color: #555;
+}
+
+.column>view>image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.column>button {
+    display: flex;
+    justify-content: space-between;
+    height: 90rpx;
+    width: 94%;
+    margin: 0 auto;
+    line-height: 90rpx;
+    border-bottom: 2rpx solid #f2f2f2;
+    align-items: center;
+    background: #fff;
+}
+
+.column>button>view {
+    font-size: 30rpx;
+    color: #555;
+}
+
+.column>button>image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.copy {
+    height: 500rpx;
+    line-height: 500rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.server {
+    background: #fff;
+    width: 70%;
+    height: 460rpx;
+    position: fixed;
+    top: 28%;
+    left: 15%;
+    z-index: 3;
+    border-radius: 10rpx;
+}
+
+.server>.s-close {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    bottom: -100rpx;
+    left: 45%;
+}
+
+.server>.s-title {
+    height: 90rpx;
+    font-size: 34rpx;
+    line-height: 90rpx;
+    text-align: center;
+}
+
+.server>.s-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.server>.s-img>image {
+    width: 230rpx;
+    height: 230rpx;
+}
+
+.server>.s-weixin {
+    color: #555;
+    font-size: 28rpx;
+    height: 60rpx;
+}
+
+.server>.s-btn,.server>.s-btn>text,.server>.s-weixin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.server>.s-btn>text {
+    color: #fff;
+    width: 200rpx;
+    font-size: 28rpx;
+    height: 60rpx;
+    border-radius: 40rpx;
+}

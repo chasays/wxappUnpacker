@@ -1,4 +1,5 @@
  # setup
+> fork from: https://github.com/xuedingmiaojun/wxappUnpacker
 
  - install yesheng
  https://www.yeshen.com/blog/category/macmnq/

@@ -1,0 +1,522 @@
+.swiper {
+    height: 220px;
+    width: 100%;
+}
+
+.banner-item,.banner-item image {
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+}
+
+.content>.c-left {
+    width: 18%;
+}
+
+.content>.c-right {
+    width: 82%;
+    background: #fff;
+    height: 670rpx;
+    overflow: scroll;
+}
+
+.content>.c-left>view {
+    height: 130rpx;
+    font-size: 32rpx;
+    color: #909090;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2rpx dashed #c4c4c4;
+}
+
+.content>.c-left>view>view {
+    text-align: center;
+}
+
+.content>.c-left>view>view>text {
+    font-size: 28rpx;
+    display: block;
+}
+
+.content>.c-left>.active {
+    background: #fff;
+    color: #000;
+}
+
+.content>.c-left>.active>view>image {
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.content>.c-left>.active>view>text {
+    position: relative;
+    top: 5rpx;
+}
+
+.content>.c-right>view {
+    padding: 20rpx;
+    color: #555;
+    font-size: 28rpx;
+}
+
+.menu {
+    display: flex;
+    margin-bottom: 20rpx;
+    border: 2rpx solid #f2f2f2;
+    box-shadow: 0 0 10rpx 2rpx #ddd;
+    border-radius: 15rpx;
+    height: 180rpx;
+    overflow: hidden;
+}
+
+.menu>.m-img {
+    width: 33%;
+}
+
+.menu>.m-img>image {
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.menu>.m-txt {
+    width: 67%;
+    position: relative;
+}
+
+.menu>.m-txt>.t-name {
+    font-size: 30rpx;
+    margin-top: 20rpx;
+    line-height: 20rpx;
+    display: flex;
+    color: #252525;
+}
+
+.menu>.m-txt>.t-name>text {
+    margin-left: 5rpx;
+    margin-top: 10rpx;
+}
+
+.menu>.m-txt>.t-title {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 10rpx;
+}
+
+.menu>.m-txt>.t-title,.t-btn {
+    display: flex;
+}
+
+.t-btn {
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 10rpx;
+    width: 95%;
+}
+
+.t-btn>.tb-left {
+    display: flex;
+    align-items: flex-end;
+}
+
+.t-btn>.tb-left>view {
+    font-size: 28rpx;
+    color: #000;
+}
+
+.t-btn>.tb-left>view>text {
+    font-size: 30rpx;
+    font-weight: 700;
+}
+
+.t-btn>.tb-left>text {
+    position: relative;
+    text-decoration: line-through;
+    font-size: 26rpx;
+    bottom: -2rpx;
+    left: 10rpx;
+    color: #909090;
+}
+
+.red {
+    color: red!important;
+}
+
+.t-btn>.tb-right {
+    width: 200rpx;
+}
+
+.t-btn>.tb-right,.t-btn>.tb-right>view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.t-btn>.tb-right>view {
+    color: #fff;
+    width: 80%;
+    height: 50rpx;
+    border-radius: 30rpx;
+}
+
+.disabled {
+    background: #999;
+}
+
+.coupon {
+    display: flex;
+    border: 2rpx solid #f2f2f2;
+    border-radius: 10rpx;
+    margin-bottom: 20rpx;
+    height: 150rpx;
+}
+
+.coupon>.c-left {
+    width: 25%;
+    justify-content: center;
+    font-size: 35rpx;
+    font-weight: 700;
+}
+
+.coupon>.c-center,.coupon>.c-left {
+    display: flex;
+    align-items: center;
+}
+
+.coupon>.c-center {
+    width: 45%;
+    flex-wrap: wrap;
+}
+
+.coupon>.c-center>view>view {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.coupon>.c-center>view>text {
+    font-size: 22rpx;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.coupon>.c-right {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.coupon>.c-right>text {
+    display: block;
+    width: 120rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    border-radius: 50rpx;
+    text-align: center;
+    font-size: 22rpx;
+    color: #fff;
+    background: #999;
+}
+
+.banner-ad {
+    width: 150rpx;
+    height: 150rpx;
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    z-index: 100;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 150rpx;
+    width: 100%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footer>image {
+    width: 60%;
+    height: 120rpx;
+    border-radius: 15rpx;
+    margin-right: 20rpx;
+}
+
+.float-btn {
+    position: fixed;
+    bottom: 0;
+    left: 100rpx;
+}
+
+.float-btn>button {
+    width: 115rpx;
+    height: 110rpx;
+    background: none;
+}
+
+.float-btn>button>image {
+    width: 115rpx;
+    height: 100rpx;
+}
+
+.server {
+    background: #fff;
+    width: 70%;
+    height: 460rpx;
+    position: fixed;
+    top: 40%;
+    left: 15%;
+    z-index: 3;
+    border-radius: 10rpx;
+}
+
+.server>.s-close {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    bottom: -100rpx;
+    left: 45%;
+}
+
+.server>.s-title {
+    height: 90rpx;
+    font-size: 34rpx;
+    line-height: 90rpx;
+    text-align: center;
+}
+
+.server>.s-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.server>.s-img>image {
+    width: 230rpx;
+    height: 230rpx;
+}
+
+.server>.s-weixin {
+    color: #555;
+    font-size: 28rpx;
+    height: 60rpx;
+}
+
+.server>.s-btn,.server>.s-btn>text,.server>.s-weixin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.server>.s-btn>text {
+    color: #fff;
+    width: 200rpx;
+    font-size: 28rpx;
+    height: 60rpx;
+    border-radius: 40rpx;
+}
+
+.layer_ad {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer_ad>view {
+    width: 550rpx;
+    position: relative;
+}
+
+.layer_ad>view>.close {
+    position: absolute;
+    right: -30rpx;
+    top: -70rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.layer_ad>view>.ad_pic {
+    width: 550rpx;
+    height: 700rpx;
+}
+
+.modal {
+    position: fixed;
+    z-index: 400;
+}
+
+.modal,.modal .modal_bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal .modal_bg {
+    position: absolute;
+    z-index: 500;
+    background: rgba(66,66,66,.5);
+}
+
+.modal .modal_box {
+    position: absolute;
+    left: 20rpx;
+    z-index: 501;
+    top: 21%;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 40rpx);
+    border-radius: 10rpx;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+}
+
+.modal .photograph {
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.modal .photograph>.bgImg {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.photograph .title {
+    position: absolute;
+    font-size: 24rpx;
+    color: #fff;
+    width: 100%;
+    top: 113rpx;
+    letter-spacing: 8rpx;
+}
+
+.photograph .newsUser {
+    top: 193rpx;
+    font-size: 30rpx;
+}
+
+.photograph .newsUser,.photograph .price {
+    position: absolute;
+    width: 100%;
+    letter-spacing: 5rpx;
+}
+
+.photograph .price {
+    top: 310rpx;
+    font-size: 50rpx;
+    text-shadow: 0rpx 0rpx 10rpx #000;
+}
+
+.price text {
+    font-size: 60rpx;
+}
+
+.photograph>.close {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    right: -3%;
+    top: 5rpx;
+}
+
+.get {
+    position: absolute;
+    left: calc(50% - 60rpx);
+    top: 465rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    animation: breathe 1s ease-in-out infinite alternate;
+}
+
+.get .getImg {
+    width: 100%;
+    height: 100%;
+}
+
+@-webkit-keyframes breathe {
+    0% {
+        transform: scale(.7);
+        box-shadow: 0 0rpx 20rpx rgba(254,247,67,.1);
+    }
+
+    to {
+        transform: scale(1.1);
+        box-shadow: 0 0rpx 30px #d93d08;
+    }
+}
+
+@-webkit-keyframes move {
+    0% {
+        top: 0;
+    }
+
+    to {
+        top: 18%;
+    }
+}
+
+@-webkit-keyframes remove {
+    0% {
+        top: 18%;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+.layer-close {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(0,0,0,.5);
+}
+
+.layer-close,.layer-close>view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer-close>view {
+    background: #fff;
+    width: 90%;
+    height: 350rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+    font-size: 34rpx;
+}
+
+.coupon-merge>image {
+    width: 100%;
+    height: 300rpx;
+}

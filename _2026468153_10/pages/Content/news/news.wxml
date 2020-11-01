@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="n-list">
+        <view bindtap="link" class="l-option" data-surl="../newsDetails/newsDetails?guid={{item.guid}}" wx:for="{{data}}" wx:key="index">
+            <view class="o-pic">
+                <image src="{{url}}{{item.sml_pic}}"></image>
+            </view>
+            <view class="o-txt">
+                <view class="o-h">{{item.title}}</view>
+                <view class="o-text">{{item.sub_title}}</view>
+                <view class="o-time">发布: {{item.create_time}}</view>
+            </view>
+        </view>
+    </view>
+</view>

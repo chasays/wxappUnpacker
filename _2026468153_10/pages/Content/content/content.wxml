@@ -1,0 +1,6 @@
+<view class="newsDetails">
+    <view class="content">
+        <video class="video" poster="{{url}}{{data.video_pic}}" src="{{data.video_path}}" wx:if="{{data.video_path}}"></video>
+        <rich-text nodes="{{data.content}}"></rich-text>
+    </view>
+</view>

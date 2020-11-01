@@ -1,0 +1,85 @@
+<view class="container">
+    <view class="title">
+        <text>分享屯券</text>
+    </view>
+    <view class="share-coupin">
+        <view class="coupon" wx:if="{{new_send_coupon.new_send_coupon_status==1}}">
+            <view class="c-left tc">{{new_send_coupon.new_send_coupon}}折</view>
+            <view class="c-center">
+                <view>
+                    <view>{{new_send_coupon.new_send_coupon_name}}</view>
+                    <text>{{new_send_coupon.new_send_coupon_title}}</text>
+                </view>
+            </view>
+            <view class="c-right">
+                <view bindtap="link" class="bg" data-surl="../share/share">马上赠送</view>
+            </view>
+        </view>
+        <view class="coupon" wx:if="{{old_send_coupon.old_send_coupon_status==1}}">
+            <view class="c-left tc">{{old_send_coupon.old_send_coupon}}折</view>
+            <view class="c-center">
+                <view>
+                    <view>{{old_send_coupon.old_send_coupon_name}}</view>
+                    <text>{{old_send_coupon.old_send_coupon_title}}</text>
+                </view>
+            </view>
+            <view class="c-right">
+                <view bindtap="setOldCoupon" class="{{old_send_coupon_condition==1?'bg':'disabled'}}">
+                领 取
+              </view>
+            </view>
+        </view>
+    </view>
+    <view class="title">
+        <text>我的优惠券</text>
+    </view>
+    <view class="mycoupon" wx:if="{{new_coupon.length>0}}">
+        <view class="coupon" wx:for="{{new_coupon}}" wx:key="index">
+            <view class="c-left tc">{{item.discount_num}}折</view>
+            <view class="c-center">
+                <view>
+                    <view>折扣券</view>
+                    <text>有效期至{{item.end_time}}</text>
+                </view>
+            </view>
+            <view class="c-right">
+                <view bindtap="link" class="bg" data-surl="../index/index" wx:if="{{item.status==0}}">立即使用</view>
+                <view wx:elif="{{item.status==1}}">已使用</view>
+                <view wx:elif="{{item.status==2}}">已过期</view>
+            </view>
+        </view>
+        <block wx:if="{{old_coupon_status}}">
+            <view class="coupon" wx:for="{{old_coupon}}" wx:key="index">
+                <view class="c-left tc">{{item.discount}}折</view>
+                <view class="c-center">
+                    <view>
+                        <view>折扣券</view>
+                        <text>有效期至{{item.end_time}}</text>
+                    </view>
+                </view>
+                <view class="c-right">
+                    <view bindtap="link" class="bg" data-surl="../index/index" wx:if="{{item.status==0}}">立即使用</view>
+                    <view class="disabled" wx:elif="{{item.status==1}}">已使用</view>
+                    <view class="disabled" wx:elif="{{item.status==2}}">已过期</view>
+                </view>
+            </view>
+        </block>
+        <view bindtap="changeHistoryStatus" class="h-do">
+            <image src="/images/icon/{{old_coupon_status?'sq':'zk'}}.png"></image>
+            <view>{{old_coupon_status?'收起':'展开'}}历史优惠券</view>
+        </view>
+    </view>
+    <view class="nodata" wx:else>— 暂无优惠券 —</view>
+</view>
+<view class="auth" wx:if="{{auth}}">
+    <view>
+        <view class="auth-content">
+            <view class="h3">授权后体验更佳</view>
+            <view class="t">·获得微信公开信息（头像、昵称等）</view>
+        </view>
+        <view class="auth-btn">
+            <button bindtap="cancelAuth" class="cancel" hoverClass="none">暂不登录</button>
+            <button bindgetuserinfo="getUserInfo" class="confirm" openType="getUserInfo" type="primary">登录授权</button>
+        </view>
+    </view>
+</view>

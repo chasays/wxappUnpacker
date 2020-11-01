@@ -1,0 +1,47 @@
+<view class="container">
+    <view class="header" style="background-image: url({{url}}/static/api/images/head.png)">
+        <view class="headimg">
+            <image bindtap="link" data-surl="../membersInfo/membersInfo" src="{{members.headimgurl?members.headimgurl:'/images/icon/nobind.png'}}"></image>
+            <view>{{members.nickname?members.nickname:'请先授权'}}</view>
+        </view>
+    </view>
+    <view class="column">
+        <view bindtap="link" data-surl="../membersInfo/membersInfo">
+            <view>个人资料</view>
+            <image src="/images/icon/right.png"></image>
+        </view>
+        <view bindtap="link" data-surl="../address/address">
+            <view>地址管理</view>
+            <image src="/images/icon/right.png"></image>
+        </view>
+        <button bindtap="serverLayer" hoverClass="none">
+            <view>联系客服</view>
+            <image src="/images/icon/right.png"></image>
+        </button>
+    </view>
+    <view class="copy">美好的一天，从早餐开始</view>
+</view>
+<view class="mask" wx:if="{{service_layer}}"></view>
+<view class="server" wx:if="{{service_layer}}">
+    <view class="s-title tc">添加客服微信咨询</view>
+    <view class="s-img">
+        <image src="{{url}}{{service.qrcode}}"></image>
+    </view>
+    <text class="s-weixin">微信号：{{service.weixin}}</text>
+    <view class="s-btn">
+        <text bindtap="copWeixin" class="bg">复制微信号</text>
+    </view>
+    <image bindtap="serverClose" class="s-close" src="/images/icon/close.png"></image>
+</view>
+<view class="auth" wx:if="{{auth}}">
+    <view>
+        <view class="auth-content">
+            <view class="h3">授权后体验更佳</view>
+            <view class="t">·获得微信公开信息（头像、昵称等）</view>
+        </view>
+        <view class="auth-btn">
+            <button bindtap="cancelAuth" class="cancel" hoverClass="none">暂不登录</button>
+            <button bindgetuserinfo="getUserInfo" class="confirm" openType="getUserInfo" type="primary">登录授权</button>
+        </view>
+    </view>
+</view>

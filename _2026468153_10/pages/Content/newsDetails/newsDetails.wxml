@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="details">
+        <view class="header">
+            <view class="h-title">{{data.title}}</view>
+            <view class="h-sub">
+                <view>{{data.create_time}}</view>
+                <text>{{data.store_name}}</text>
+            </view>
+        </view>
+        <view class="content">
+            <view class="c-content">
+                <rich-text nodes="{{data.content}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <view class="d-footer">
+        <view>
+            <view bindtap="collectHandel">
+                <image src="/images/icon/n-collect{{data.collect.status}}.png"></image>
+                <text>收藏</text>
+            </view>
+            <button hoverClass="none" openType="share">
+                <image src="/images/icon/n-share.png"></image>
+                <text>分享</text>
+            </button>
+        </view>
+    </view>
+</view>
+<view class="auth" wx:if="{{auth}}">
+    <view>
+        <view class="auth-content">
+            <view class="h3">授权后体验更佳</view>
+            <view class="t">·获得微信公开信息（头像、昵称等）</view>
+        </view>
+        <view class="auth-btn">
+            <button bindgetuserinfo="getUserInfo" openType="getUserInfo" type="primary">确认授权</button>
+        </view>
+    </view>
+</view>

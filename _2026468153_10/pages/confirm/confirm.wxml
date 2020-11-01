@@ -1,0 +1,155 @@
+<view class="container order-container">
+    <view class="order-address-info">
+        <view bindtap="link" class="contact-box" data-surl="../Members/address/address?goods_guid={{goods_guid}}" wx:if="{{address}}">
+            <view>
+                <view class="contact">
+                    <view>
+                        <image src="/images/icon/user.png"></image>
+                        <text class="val">{{address.username}}</text>
+                    </view>
+                    <view class="mobile-box">
+                        <image src="/images/icon/mobile.png"></image>
+                        <text class="val">{{address.userphone}}</text>
+                    </view>
+                </view>
+                <view class="detail">{{address.address[0]}}{{address.address[1]}}{{address.address[2]}}{{address.details}}</view>
+            </view>
+        </view>
+        <view bindtap="link" class="add-new-address" data-surl="../Members/address/address?goods_guid={{goods_guid}}" wx:else>
+            <text class="icon">+</text>
+            <text>添加地址</text>
+        </view>
+    </view>
+    <view class="goods-content">
+        <view>
+            <view class="left-img">
+                <image src="{{url}}{{goods.pic}}"></image>
+            </view>
+            <view class="right_text">
+                <view class="g-name">
+                    <view>
+                        <text>{{goods.name}}</text>
+                    </view>
+                    <text>{{goods.title}}</text>
+                </view>
+                <view class="g-bottom">
+                    <view class="g-cate">
+                        <view wx:if="{{goods.price>0}}">
+                            <text>￥</text>{{goods.price}}</view>
+                        <view wx:else>免费试吃</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="cycle-list" wx:if="{{goods.cate_id==1&&goods.price!=0}}">
+        <view class="cycle">
+            <text>购买周期（接下来{{week_num}}周）</text>
+            <view>
+                <view class="upNum">
+            一周套餐
+            </view>
+            </view>
+        </view>
+        <view class="cycle-msg">
+            <view class="cm-top">
+                <text>form</text>
+                <text>to</text>
+            </view>
+            <view class="cm-bottom">
+                <view>
+                    <view>{{week.data.start_date.y}}</view>
+                    <text>年</text>
+                    <view>{{week.data.start_date.m}}</view>
+                    <text>月</text>
+                    <view>{{week.data.start_date.d}}</view>
+                    <text>日</text>
+                </view>
+                <view>
+                    <view>{{week.data.end_date.y}}</view>
+                    <text>年</text>
+                    <view>{{week.data.end_date.m}}</view>
+                    <text>月</text>
+                    <view>{{week.data.end_date.d}}</view>
+                    <text>日</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="server-list">
+        <view>
+            <text>购买数量</text>
+            <view>
+                <view class="upNum">
+                    <image bindtap="upNum" data-type="-1" src="/images/icon/jian.png"></image>
+                    <input disabled type="number" value="{{buy_num}}"></input>
+                    <image bindtap="upNum" data-type="1" src="/images/icon/jia.png"></image>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{goods.old_price>0}}">
+            <text>优惠</text>
+            <view>
+                <picker bindchange="couponeChange" mode="selector" range="{{coupon}}" rangeKey="name" value="{{index}}" wx:if="{{coupon.length>0}}">
+                    <view>使用<text>{{coupon_checked.discount_num}}</text>折扣券，省了<text>{{pay.jian_money}}</text>元</view>
+                </picker>
+                <view wx:else>已享受<text>{{pay.discount*10}}</text>折优惠，省了<text>{{pay.jian_money}}</text>元</view>
+                <image src="/images/icon/next.png" wx:if="{{coupon.length>0}}"></image>
+            </view>
+        </view>
+        <view>
+            <text>买家留言</text>
+            <view>
+                <input bindinput="messages" placeholder="建议填写已经和卖家沟通的信息" placeholderClass="pmsg"></input>
+            </view>
+        </view>
+    </view>
+    <view bindtap="comfirmChange" class="comfirm">
+        <view>
+            <image src="/images/icon/status_{{comfirm?'1':'0'}}.png"></image>
+        </view>
+        <text>请确认订单信息无误</text>
+    </view>
+    <form bindsubmit="payHandel" reportSubmit="true">
+        <view class="footer-account-box">
+            <view class="pay-msg" wx:if="{{pay.code!=200}}">{{pay.msg}}</view>
+            <view class="pay-btn">
+                <view>付款合计：￥{{pay.paymoney?pay.paymoney:'0.00'}}</view>
+                <button class="pay bg" formType="submit" wx:if="{{pay.code==200}}">去付款</button>
+                <button class="pay disabled" wx:else>去付款</button>
+            </view>
+        </view>
+    </form>
+</view>
+<block wx:if="{{calendar}}">
+    <view class="layer-mask"></view>
+    <view class="calendar" style="background-image:url('{{url}}/static/api/images/datebg.png')">
+        <view class="cal-header">
+            <view class="cal-year">{{year}}年</view>
+            <view class="cal-month">
+                <view bindtap="lastMonth" class="icon">
+                    <image mode="widthFix" src="/images/icon/dleft.png"></image>
+                </view>
+                <view>{{month>9?month:'0'+month}}</view>
+                <view bindtap="nextMonth" class="icon">
+                    <image mode="widthFix" src="/images/icon/dright.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="cal-content">
+            <view class="cal-week">
+                <view wx:for="{{date}}" wx:key="index">{{item}}</view>
+            </view>
+            <view class="cal-date">
+                <view class="{{isToday==item.isToday?'nowDay':''}}" wx:for="{{dateArr}}" wx:key="index">
+                    <view class="date-head">
+                        <view>{{item.dateNum}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="layer_close">
+        <image bindtap="closeCalendar" mode="widthFix" src="/images/icon/close.png"></image>
+    </view>
+</block>

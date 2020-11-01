@@ -1,0 +1,70 @@
+<view class="container">
+    <view class="top-tab">
+        <view bindtap="changeTab" class="{{type==1?'avtice':''}}" data-type="1">
+            <text>进行中</text>
+        </view>
+        <view bindtap="changeTab" class="{{type==2?'avtice':''}}" data-type="2">
+            <text>未支付</text>
+        </view>
+        <view bindtap="changeTab" class="{{type==3?'avtice':''}}" data-type="3">
+            <text>已完成</text>
+        </view>
+        <view bindtap="changeTab" class="{{type==4?'avtice':''}}" data-type="4">
+            <text>全部</text>
+        </view>
+    </view>
+    <view class="list">
+        <block wx:if="{{data.length>0}}">
+            <view class="l-option" wx:for="{{data}}" wx:key="index">
+                <view class="l-title">
+                    <view>下单时间：{{item.create_time}}</view>
+                    <text wx:if="{{item.status==0}}">未支付</text>
+                    <text class="tc" wx:if="{{item.status==1}}">已支付</text>
+                    <text wx:if="{{item.status==5}}">已取消</text>
+                </view>
+                <view class="o-child">
+                    <view bindtap="link" data-surl="../orderDetails/orderDetails?ordercode={{item.ordercode}}">
+                        <view class="m-img">
+                            <image src="{{url}}{{item.goods_pic}}"></image>
+                        </view>
+                        <view class="m-txt">
+                            <view class="t-name">{{item.goods_name}}</view>
+                            <text class="t-title">{{item.week}}</text>
+                            <view class="t-btn">
+                                <view wx:if="{{item.goods_price>0}}">￥{{item.goods_price}}</view>
+                                <view wx:else>免费试吃</view>
+                                <text>x{{item.buy_num}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="order-btn">
+                    <view class="msg"></view>
+                    <view class="btn">
+                        <block wx:if="{{item.status==0}}">
+                            <view bindtap="editMessages" class="light" data-index="{{index}}">{{item.messages?'修改':'添加'}}备注</view>
+                            <view bindtap="upStatus" class="cancel" data-ordercode="{{item.ordercode}}" data-status="5">取消订单</view>
+                            <view bindtap="payOrder" class="light" data-ordercode="{{item.ordercode}}">去支付</view>
+                        </block>
+                        <view bindtap="editMessages" class="light" data-index="{{index}}" wx:if="{{item.status==1}}">{{item.messages?'修改':'添加'}}备注</view>
+                        <view wx:if="{{item.status==2}}">已完成</view>
+                        <view bindtap="delorder" data-ordercode="{{item.ordercode}}" wx:if="{{item.status==5}}">删除</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class="nodata" wx:else> — 暂无订单 —</view>
+    </view>
+</view>
+<block wx:if="{{msg_layer}}">
+    <view class="mask"></view>
+    <view class="msg-layer">
+        <view class="s-content">
+            <textarea bindinput="getValue" placeholder="订单留言" value="{{messages}}"></textarea>
+        </view>
+        <view class="s-btn">
+            <view bindtap="cancel">取消</view>
+            <view bindtap="editMessagesHandel" class="tc">确定</view>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,76 @@
+page {
+    background: #fff;
+}
+
+.header {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.header>.h-title {
+    font-size: 35rpx;
+    color: #333;
+    padding: 20rpx 0;
+    font-weight: 700;
+}
+
+.header>.h-sub {
+    display: flex;
+}
+
+.header>.h-sub>view {
+    font-size: 28rpx;
+    color: #999;
+    margin-right: 20rpx;
+}
+
+.header>.h-sub>text {
+    font-size: 30rpx;
+    color: #576b95;
+}
+
+.content {
+    width: 96%;
+    margin: 20rpx auto;
+}
+
+.c-content {
+    font-size: 30rpx;
+    color: #555;
+}
+
+.d-footer {
+    height: 90rpx;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    border-top: 2rpx solid #f2f2f2;
+}
+
+.d-footer,.d-footer>view {
+    display: flex;
+    width: 100%;
+}
+
+.d-footer>view>button,.d-footer>view>view {
+    width: 50%;
+    text-align: center;
+    font-size: 30rpx;
+    height: 70rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    background: #fff;
+}
+
+.d-footer>view>button>image,.d-footer>view>view>image {
+    width: 45rpx;
+    height: 45rpx;
+    margin-right: 10rpx;
+}
+
+.d-footer>view>view:first-child {
+    border-right: 2rpx solid #f2f2f2;
+}

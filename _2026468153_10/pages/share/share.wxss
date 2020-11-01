@@ -1,0 +1,7 @@
+.share,page {
+    background: #fff;
+}
+
+.share,.share>image {
+    width: 100%;
+}
